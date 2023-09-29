@@ -1,5 +1,6 @@
 <?php
 // Variables
+$dept_footer_name = get_theme_mod('ucla_footer_dept_name');
 $dept_footer_address = get_theme_mod('ucla_footer_address');
 $dept_footer_phone = get_theme_mod('ucla_footer_phone');
 $dept_footer_email = get_theme_mod('ucla_footer_email');
@@ -40,8 +41,14 @@ $dept_footer_social = [
       <img class="ucla-dept-footer__logo" src="https://www.ucla.edu/img/logo-ucla.svg" alt="UCLA Logo" />
       <div class="ucla-dept-footer__body">
         <div class="ucla-dept-footer__info">
-          <?php if ($dept_footer_address || $dept_footer_phone || $dept_footer_email) { ?>
+          <?php if ($dept_footer_name || $dept_footer_address || $dept_footer_phone || $dept_footer_email) { ?>
             <address class="ucla-dept-footer__info-address">
+              <?php
+              if ($dept_footer_name) :
+                echo esc_html($dept_footer_name);
+              endif;
+              ?>
+                <br />
               <?php
               if ($dept_footer_address) :
                 echo nl2br(esc_html($dept_footer_address));

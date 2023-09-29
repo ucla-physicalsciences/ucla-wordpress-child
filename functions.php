@@ -96,6 +96,25 @@ function get_breadcrumb()
   }
 }
 
+
+function ucla_ps_customizer_settings($wp_customize)
+{
+
+  $wp_customize->add_setting('ucla_footer_dept_name', array(
+    'type' => 'theme_mod',
+    'transport' => 'postMessage',
+  ));
+  $wp_customize->add_control('ucla_footer_dept_name', array(
+    'label' => __('Department Name', 'ucla-wordpress'),
+    'type' => 'text',
+    'section' => 'ucla_theme_options',
+    'settings' => 'ucla_footer_dept_name'
+  ));
+
+}
+
+add_action('customize_register', 'ucla_ps_customizer_settings');
+
 /**
  * PRINT DATE FUNCTIONS
  */
