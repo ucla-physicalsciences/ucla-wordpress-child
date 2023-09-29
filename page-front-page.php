@@ -1,9 +1,9 @@
 <?php
 /**
  * Template Name: Front Page
- * The template for displaying all single posts
+ * The template for displaying the front page aka home page
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  **/
 
