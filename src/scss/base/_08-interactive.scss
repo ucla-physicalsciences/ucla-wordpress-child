@@ -1,0 +1,36 @@
+//  =====================================================
+//  HTML Living Standard
+//  Interactive Elements
+//  https://html.spec.whatwg.org/multipage/interactive-elements.html
+//  details, summary
+//  =====================================================
+
+details {
+  border: 2px solid var(--ucla-blue);
+  padding: 0.5em 0.5em 0;
+  margin-block-end: 1rem;
+}
+
+summary {
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  color: var(--ucla-blue);
+  //border-bottom: 1px solid var(--ucla-blue);
+  margin-bottom: 0.5em;
+}
+
+details .wp-block-table thead {
+  border-bottom: 2px solid var(--ucla-gold);
+}
+
+details .wp-block-table th {
+  padding: .25em;
+}

@@ -1,0 +1,47 @@
+[class*=wp-block] {
+  margin-block: var(--spacing-4);
+}
+
+[class*=wp-block-heading] {
+  margin-block-start: var(--spacing-6);
+  margin-block-end: var(--spacing-4);
+}
+
+.wp-block-embed {
+  width: 50%;
+  margin-block: var(--spacing-6);
+  margin-inline: auto;
+}
+
+.wp-block-embed.alignwide,
+{
+  width: 100%;
+}
+
+.wp-block-embed.alignfull{
+  width: 100%;
+}
+
+.wp-block-embed.is-type-video iframe,
+{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: initial;
+}
+
+.wp-block-group-is-layout-flex {
+  gap: 1.5em;
+}
+
+.wp-block-separator.is-style-dots:before {
+  font-size: 4em;
+  letter-spacing: 0;
+  padding-left: initial;
+}
+
+
+
