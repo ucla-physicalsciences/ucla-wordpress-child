@@ -6,6 +6,75 @@ function ucla_wordpress_child_load_scripts() {
 }
 
 /**
+ * Function and filters to remove width|height attributes. 
+ * https://wordpress.stackexchange.com/questions/22302/how-do-you-remove-hard-coded-thumbnail-image-dimensions
+ * https://petragregorova.com/articles/how-to-remove-height-and-width-attributes-from-images-in-wordpress/
+ */
+
+ function remove_width_attribute( $html ) { 
+  $html = preg_replace( '/(width|height)="\d*"\s/', "", $html ); 
+  return $html;
+}
+
+add_filter("post_thumbnail_html", "remove_width_attribute", 10);
+add_filter("image_send_to_editor", "remove_width_attribute", 10);
+//add_filter( 'the_content', 'remove_thumbnail_dimensions', 10 );
+
+
+// Filters the returned oEmbed HTML.
+// https://developer.wordpress.org/reference/hooks/oembed_dataparse/
+add_filter( 'oembed_dataparse', 'remove_width_attribute', 10 );  
+
+
+/**
+ * Add media alternate image sizes besides WP defaults
+ * https://developer.wordpress.org/reference/functions/add_image_size/
+ * add_image_size( string $name, int $width, int $height, bool|array $crop = false )
+ */
+
+add_image_size("square", "600", "600", true);
+add_image_size("square_thumb", "300", "300", true);
+
+/** REMOVE wp-emoji **/
+
+remove_action("wp_head", "print_emoji_detection_script", 7);
+remove_action("wp_print_styles", "print_emoji_styles");
+
+// https://managewp.com/hack-improve-wordpress-toolbar
+
+add_action("admin_bar_menu", "ucla_ps_edit_toolbar", 999);
+
+function ucla_ps_edit_toolbar($wp_toolbar)
+{
+  $wp_toolbar->remove_node("updates");
+  $wp_toolbar->remove_node("comments");
+  //$wp_toolbar->remove_node('wp-logo');
+  //$wp_toolbar->remove_node('site-name');
+  //$wp_toolbar->remove_node('new-content');
+  //$wp_toolbar->remove_node('top-secondary');
+}
+
+/**
+ * Removes some menus by page.
+ */
+add_action("admin_menu", "ucla_ps_remove_menus");
+function ucla_ps_remove_menus()
+{
+  remove_menu_page("edit-comments.php");
+  remove_menu_page("link-manager.php"); //Comments
+  //remove_menu_page( 'index.php' );                  //Dashboard
+  //remove_menu_page( 'jetpack' );                    //Jetpack*
+  //remove_menu_page( 'edit.php' );                   //Posts
+  //remove_menu_page( 'upload.php' );                 //Media
+  //remove_menu_page( 'edit.php?post_type=page' );    //Pages
+  //remove_menu_page( 'themes.php' );                 //Appearance
+  //remove_menu_page( 'plugins.php' );                //Plugins
+  //remove_menu_page( 'users.php' );                  //Users
+  //remove_menu_page( 'tools.php' );                  //Tools
+  //remove_menu_page( 'options-general.php' );        //Settings
+}
+
+/**
  * PRINT DATE FUNCTIONS
  */
 
