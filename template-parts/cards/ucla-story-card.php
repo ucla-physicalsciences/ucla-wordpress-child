@@ -8,7 +8,7 @@ else
   $link_attrs = "href='".get_permalink()."'";
   }
 ?>
-<article class="ucla-card ucla-card__story h-entry post-<?php the_ID(); ?>" id="post-<?php the_ID(); ?>">
+<article class="ucla-card ucla-card__story ucla-has-background-grey-03 h-entry post-<?php the_ID(); ?>" id="post-<?php the_ID(); ?>">
   <?php // Entry Meta ?>
   <figure>
   <a <?php echo $link_attrs; ?> rel="bookmark" class="story-card-image-link">
