@@ -790,7 +790,7 @@ span.ctct-label-top {
   }
   [data-layout*=c-newsroom] > :nth-child(1) div > * {
     background-color: var(--ucla-white);
-    max-width: 33%;
+    max-width: 40%;
     padding-inline-end: var(--spacing-8);
   }
   [data-layout*=c-newsroom] > :nth-child(1) h2 {
