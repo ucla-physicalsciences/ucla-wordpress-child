@@ -402,6 +402,10 @@ details .wp-block-table th {
 }
 
 /* Cards  ((Critical: All) */
+.c-blog-posts .ucla-card {
+  background-color: #f2f2f2;
+}
+
 .c-school-card-stack {
   width: 100%;
   background-color: #f2f2f2;
