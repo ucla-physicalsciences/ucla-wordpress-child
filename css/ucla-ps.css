@@ -1091,6 +1091,9 @@ span.ctct-label-top {
   background-color: var(--ucla-blue);
   color: var(--ucla-white);
 }
+[data-layout*=c-single-post] ul.post-categories {
+  list-style-type: none;
+}
 [data-layout*=c-single-post] ul.post-categories a:link,
 [data-layout*=c-single-post] ul.post-categories a:not([class]) {
   text-decoration: none;
