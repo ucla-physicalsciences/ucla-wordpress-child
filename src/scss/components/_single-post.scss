@@ -87,6 +87,10 @@
     }
   }
 
+  ul.post-categories {
+    list-style-type: none;
+  }
+  
   ul.post-categories a:link,
   ul.post-categories a:not([class]) {
     text-decoration: none;
