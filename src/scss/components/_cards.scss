@@ -106,4 +106,33 @@
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
 }
 
+.ucla-ps-cards-grid {
+  display: grid;
+  grid-column-gap: var(--grid-column-gap);
+  grid-row-gap: var(--grid-row-gap);
+  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+}
 
+.ucla-card img {
+  max-width: 300px;
+}
+
+.entry-content {
+  max-width: reset;
+}
+
+.ucla-card__story-secondary:first-child {
+  border-top: 0;
+}
+
+.ucla-card__story-secondary {
+  border: 0;
+}
+
+[class*=wp-block] {
+  margin-block: var(--spacing-3);
+}
+
+.wp-block-separator {
+  border: 0;
+}
