@@ -511,10 +511,6 @@ details .wp-block-table th {
   border: 0;
 }
 
-[class*=wp-block] {
-  margin-block: var(--spacing-3);
-}
-
 .wp-block-separator {
   border: 0;
 }
@@ -1196,10 +1192,6 @@ span.ctct-label-top {
 .footer-widget-container {
   margin: var(--spacing-8) auto;
   max-width: var(--max-width);
-}
-
-[class*=wp-block] {
-  margin-block: var(--spacing-4);
 }
 
 [class*=wp-block-heading] {
