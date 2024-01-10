@@ -39,6 +39,8 @@ add_image_size("square_thumb", "300", "300", true);
 
 remove_action("wp_head", "print_emoji_detection_script", 7);
 remove_action("wp_print_styles", "print_emoji_styles");
+remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
+//remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
 
 // https://managewp.com/hack-improve-wordpress-toolbar
 
