@@ -1136,7 +1136,7 @@ span.ctct-label-top {
     grid-area: story;
     justify-self: end;
     z-index: 1;
-    max-width: 70%;
+    max-width: 65%;
   }
   [data-layout*=c-single-post] > .entry-header > div {
     grid-area: story;
@@ -1259,6 +1259,10 @@ main > article[class*=post] {
 }
 .ucla-ps-columns {
   column-width: 18em;
+}
+
+.ucla-grid {
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
 }
 
 .visually-hidden {
